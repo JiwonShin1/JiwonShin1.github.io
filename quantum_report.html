@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>양자물리·양자컴퓨팅 보고서</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --text: #eef3ff;
+      --muted: #b4c0e0;
+      --accent: #79b8ff;
+      --accent-2: #8cf2d5;
+      --line: #2a3764;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(180deg, #070b16, var(--bg));
+      color: var(--text);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin-top: 0; }
+    h1 { font-size: 2.1rem; margin-bottom: 14px; }
+    h2 {
+      font-size: 1.35rem;
+      margin: 36px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    h3 { font-size: 1.08rem; margin: 24px 0 10px; color: var(--accent-2); }
+    p { margin: 8px 0; color: var(--text); }
+    ul { margin: 10px 0 12px 22px; }
+    li { margin: 4px 0; color: var(--muted); }
+    .lead {
+      background: rgba(121, 184, 255, 0.1);
+      border: 1px solid rgba(121, 184, 255, 0.3);
+      border-radius: 14px;
+      padding: 16px 18px;
+      color: var(--text);
+    }
+    .quote {
+      border-left: 4px solid var(--accent);
+      background: rgba(255,255,255,0.03);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(140, 242, 213, 0.12);
+      color: var(--accent-2);
+      border: 1px solid rgba(140, 242, 213, 0.35);
+      margin-bottom: 8px;
+    }
+    .footnote {
+      margin-top: 26px;
+      font-size: 0.92rem;
+      color: #9fb1de;
+      border-top: 1px dashed var(--line);
+      padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>양자물리와 양자컴퓨팅 핵심 보고서</h1>
+    <p class="lead">본 문서는 전달하신 메모를 바탕으로, 양자물리의 핵심 개념(입자·파동, 중첩, 얽힘)부터 양자컴퓨터 하드웨어/소프트웨어까지 흐름이 보이도록 재구성한 HTML 보고서입니다.</p>
+
+    <div class="quote">“이 세상은 입자인 동시에 파동이다.”</div>
+
+    <h2>1) 양자물리의 출발: 입자와 파동의 이중성</h2>
+    <div class="grid">
+      <section class="card">
+        <span class="tag">입자성</span>
+        <ul>
+          <li>입자는 질량·에너지·운동량 같은 물리량을 가진 “덩어리”로 이해할 수 있음.</li>
+          <li>광전효과는 빛이 입자(광자)처럼 작용함을 보여준 대표 실험.</li>
+          <li>빛 에너지는 광자 1개의 에너지 단위의 정수배로 다뤄짐.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <span class="tag">파동성</span>
+        <ul>
+          <li>파동은 진동/요동이 공간으로 퍼져 나가는 현상.</li>
+          <li>이중슬릿 실험의 간섭무늬는 파동적 성질의 강력한 증거.</li>
+          <li>전자처럼 “입자”라고 여겨졌던 대상도 간섭을 보임.</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>2) 양자(Quantum) 개념의 형성</h2>
+    <ul>
+      <li>흑체복사 연구를 통해 에너지가 연속이 아닌 불연속 단위로 교환된다는 관점이 강화됨.</li>
+      <li>플랑크는 에너지가 기본 단위(양자)로 나뉜다고 제안했고, 이 개념이 양자역학의 출발점이 됨.</li>
+      <li>양자화(quantization): 물리량이 연속값이 아닌 특정 이산값만 허용되는 성질.</li>
+    </ul>
+
+    <h2>3) 중첩과 측정: 양자역학의 핵심 문법</h2>
+    <h3>중첩(superposition)</h3>
+    <ul>
+      <li>양자계는 여러 고유상태가 동시에 겹친 상태(중첩)로 존재할 수 있음.</li>
+      <li>중첩 상태는 슈뢰딩거 방정식(물질파의 시간 변화식)으로 기술됨.</li>
+      <li>측정 이전에는 결과가 확정되어 있지 않고, 확률적으로 기술됨.</li>
+    </ul>
+
+    <h3>측정과 붕괴(collapse)</h3>
+    <ul>
+      <li>중첩 상태를 측정하면 가능한 고유상태 중 하나만 관측됨.</li>
+      <li>각 결과의 확률은 해당 상태 파동함수 진폭의 제곱에 비례(보른 규칙).</li>
+      <li>미시세계에서는 “측정” 자체가 계를 교란해 상태를 바꿀 수 있음.</li>
+    </ul>
+
+    <h3>불확정성 원리</h3>
+    <p>위치와 운동량 같은 물리량은 동시에 임의 정밀도로 확정할 수 없다. 이는 측정 한계가 아니라 자연의 근본 구조를 반영한다.</p>
+
+    <h2>4) 얽힘(entanglement): 양자정보의 엔진</h2>
+    <ul>
+      <li>두 입자가 독립적으로 설명되지 않고 하나의 결합된 상태를 이룰 때 얽힘 상태라 함.</li>
+      <li>얽힘은 양자컴퓨팅에서 다중 큐비트 연산(CNOT 등)의 핵심 자원.</li>
+      <li>비국소성 관련 논쟁이 있었으나, 벨 부등식 실험 계열은 양자 예측을 강하게 지지.</li>
+    </ul>
+
+    <h2>5) 왜 양자컴퓨터가 필요한가</h2>
+    <ul>
+      <li>고전 컴퓨터는 미세화·발열·전력 소모 한계에 직면.</li>
+      <li>원자 스케일에 가까워질수록 양자효과가 회로 동작에 직접 개입.</li>
+      <li>문제의 원인이던 양자효과를 계산 자원으로 전환한 접근이 양자컴퓨팅.</li>
+    </ul>
+
+    <h2>6) 양자 연산의 기본: 큐비트, 회전, CNOT</h2>
+    <div class="grid">
+      <section class="card">
+        <span class="tag">큐비트</span>
+        <ul>
+          <li>비트(0/1)와 달리, 큐비트는 0과 1의 중첩 상태를 가질 수 있음.</li>
+          <li>스핀, 에너지 준위, 편광 등 “두 상태”를 갖는 양자계로 구현 가능.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <span class="tag">단일 큐비트 게이트</span>
+        <ul>
+          <li>회전 연산(예: X, Y, Z축 회전)으로 상태 진폭/위상을 제어.</li>
+          <li>NOT은 특정 축 회전의 특수한 경우로 이해 가능.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <span class="tag">이큐비트 게이트</span>
+        <ul>
+          <li>CNOT은 제어 큐비트 값에 따라 표적 큐비트를 반전.</li>
+          <li>얽힘 생성/해제에 필수이며 실용 알고리즘에 거의 필수적으로 등장.</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>7) 주요 하드웨어 플랫폼 비교</h2>
+    <h3>트랩드 이온</h3>
+    <ul>
+      <li>RF/DC 전기장으로 이온을 진공 중 포획(폴 트랩), 레이저 냉각 후 제어.</li>
+      <li>광학 큐비트·초미세 큐비트 방식이 널리 연구됨.</li>
+      <li>강점: 높은 충실도/긴 결맞음. 과제: 대규모 확장 및 제어 복잡도.</li>
+    </ul>
+
+    <h3>초전도</h3>
+    <ul>
+      <li>조셉슨 접합 기반 인공원자로 큐비트 구현, 보통 수 GHz 대역 동작.</li>
+      <li>희석냉동기(수 mK)와 정교한 제어/필터링/패키징이 핵심.</li>
+      <li>강점: 집적·속도·산업 생태계. 과제: 잡음, 보정, 배선/열 설계 확장.</li>
+    </ul>
+
+    <h3>광자</h3>
+    <ul>
+      <li>결맞음·장거리 전송에 강점이 있어 양자통신에 유리.</li>
+      <li>단점은 광자 간 상호작용이 약해 2큐비트 게이트가 어렵다는 점.</li>
+    </ul>
+
+    <h3>중성원자</h3>
+    <ul>
+      <li>광학 트랩/리드베리 상호작용을 활용해 다수 원자를 배열.</li>
+      <li>확장 잠재력이 크고 최근 성능이 빠르게 개선되는 플랫폼.</li>
+    </ul>
+
+    <h2>8) 양자 소프트웨어와 알고리즘</h2>
+    <ul>
+      <li>양자 알고리즘은 회전+CNOT 등 기본 게이트로 분해되어 실행됨.</li>
+      <li>중첩 덕분에 상태공간 전체를 한 번에 다루지만, 최종 측정은 하나의 결과만 제공.</li>
+      <li>핵심은 “원하는 정답의 확률 진폭을 키우는 간섭 설계”에 있음.</li>
+    </ul>
+
+    <div class="grid">
+      <section class="card">
+        <span class="tag">Shor 알고리즘</span>
+        <p>소인수분해의 계산 복잡도를 크게 낮춰 공개키 암호체계(RSA 등)에 구조적 영향을 줄 수 있음.</p>
+      </section>
+      <section class="card">
+        <span class="tag">Grover 알고리즘</span>
+        <p>비정렬 탐색에서 고전적 O(N) 대비 O(√N) 성능 향상을 제공.</p>
+      </section>
+    </div>
+
+    <h2>9) 종합 결론</h2>
+    <ul>
+      <li>양자물리의 기본 가정(이중성·중첩·측정·확률·얽힘)은 실험적으로 강하게 지지된다.</li>
+      <li>양자컴퓨터의 실용화는 하드웨어 신뢰도, 오류정정, 제어공학, 소프트웨어 생태계가 함께 성숙해야 가능하다.</li>
+      <li>단기적으로는 특정 문제(암호, 최적화, 시뮬레이션) 중심의 하이브리드 활용이 현실적 경로다.</li>
+    </ul>
+
+    <p class="footnote">참고 메모: 본 보고서는 사용자 제공 초안을 중심으로 구조화했으며, 일부 중복·구어체·메모성 문장은 보고서 문체로 정리했습니다.</p>
+  </main>
+</body>
+</html>
